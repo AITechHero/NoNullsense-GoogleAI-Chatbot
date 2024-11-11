@@ -105,6 +105,23 @@ export GOOGLE_APPLICATION_CREDENTIALS="./credentials.json"
 python environment_check.py
 python -c "import google.cloud.aiplatform as vertexai; print('Setup successful!')"
 ```
+### Environment Configuration
+
+```yaml
+# Base environment.yml
+name: google-chatbot
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+    - fastapi
+    - uvicorn
+    - python-dotenv
+    - google-cloud-aiplatform
+```
 
 ## Version Information
 
@@ -213,40 +230,21 @@ google-chatbot/
 ├── README.md
 ├── requirements.txt
 ├── environment.yml
-└── episodes/
-    ├── episode1/
-    ├── episode2/
-    └── ...
+├── episode1/
+├── episode2/
+└── ...
 ```
 
 ### Setup TODO Checklist
 
 - [ ] **Install Miniconda:** Download and install the appropriate version for your OS.
-- [ ] **Create a conda environment:** `conda create -n google-chatbot python=3.9`
+- [ ] **Create a conda environment (if not using `environment.yml`):** `conda create -n google-chatbot python=3.9`
 - [ ] **Activate the environment:** `conda activate google-chatbot`
 - [ ] **Install required packages:** `conda install nodejs` and `npm install -g firebase-tools`
 - [ ] **Create a Google Cloud Project:** [https://cloud.google.com/](https://cloud.google.com/)
 - [ ] **Enable billing for the project:** (required for Cloud Functions)
 - [ ] **Install the Google Cloud SDK:** [https://cloud.google.com/sdk/docs/install](https://cloud.google.com/sdk/docs/install)
 - [ ] **Authenticate with your Google Cloud account:** `gcloud auth login`
-
-### Environment Configuration
-
-```yaml
-# Base environment.yml
-name: google-chatbot
-channels:
-  - conda-forge
-  - defaults
-dependencies:
-  - python=3.9
-  - pip
-  - pip:
-    - fastapi
-    - uvicorn
-    - python-dotenv
-    - google-cloud-aiplatform
-```
 
 ## Step-By-Step Setup Instructions
 
