@@ -1,0 +1,14 @@
+name: google-chatbot-test
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - nodejs
+  - pip
+  - conda-env-npm
+  - pip:
+    - fastapi
+    - uvicorn
+    - python-dotenv
+    - google-cloud-aiplatform
