@@ -11,11 +11,20 @@ conda activate google-chatbot
 # 2. Install episode requirements
 pip install -r requirements.txt
 
-# 3. Start the backend
+# 3. Get Credentials from Google's Cloud Platform including the Model and Region
+
+1. Change `.env.example` to `.env`
+2. Change default values to values from your google cloud project
+3. Navigate to Vertex AI > Chat and select the model you want to use
+4. Update Location with region and model name with model.
+
+# 4. Start the backend
 cd backend
 uvicorn main:app --reload
 
-# 4. Open frontend/index.html in your browser
+# 5. Open browser and navigate to http://127.0.0.1:8000
+
+# 6. Chatbot Ready
 ```
 
 ## What We're Building
